@@ -1,0 +1,14 @@
+/vendor/
+/.idea/
+/.vscode/
+*.sublime-workspace
+*.sublime-project
+.phpstorm.meta.php
+.phpunit.result.cache
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+*~
+/test*.php
+.php-cs-fixer.cache
