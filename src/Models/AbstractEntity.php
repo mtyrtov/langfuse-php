@@ -31,7 +31,7 @@ abstract class AbstractEntity
         return $this;
     }
 
-    public function setOutput(array|string $output): self
+    public function setOutput(null|array|string $output): self
     {
         $this->output = $output;
         return $this;
