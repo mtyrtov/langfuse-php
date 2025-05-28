@@ -102,6 +102,25 @@ final class LangfuseClient
     /**
      * @throws LangfuseException
      */
+    public function createAnnotationQueueItem(
+        string $queueId,
+        string $objectId,
+        string $objectType
+    ): array {
+        return $this->fetch(
+            method: 'POST',
+            uri: "/api/public/annotation-queues/$queueId/items",
+            payload: [
+                "objectId" => $objectId,
+                "objectType" => $objectType,
+                "status" => "PENDING",
+            ],
+        );
+    }
+
+    /**
+     * @throws LangfuseException
+     */
     private function fetch(string $method, string $uri, array $query = [], array $payload = []): array
     {
         try {
