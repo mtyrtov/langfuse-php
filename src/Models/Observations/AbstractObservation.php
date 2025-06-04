@@ -46,7 +46,7 @@ abstract class AbstractObservation extends AbstractEntity
         return $this->startTime?->format('Y-m-d\TH:i:s.u\Z');
     }
 
-    public function setStartTime(Carbon $startTime): self
+    public function setStartTime(Carbon $startTime): static
     {
         $this->startTime = $startTime;
         return $this;

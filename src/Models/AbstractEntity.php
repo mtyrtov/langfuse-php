@@ -25,25 +25,25 @@ abstract class AbstractEntity
         public string $name,
     ) {}
 
-    public function setInput(array|string $input): self
+    public function setInput(array|string $input): static
     {
         $this->input = $input;
         return $this;
     }
 
-    public function setOutput(null|array|string $output): self
+    public function setOutput(null|array|string $output): static
     {
         $this->output = $output;
         return $this;
     }
 
-    public function setParent(AbstractEntity $parent): self
+    public function setParent(AbstractEntity $parent): static
     {
         $this->parent = $parent;
         return $this;
     }
 
-    public function setEnvironment(?string $environment): self
+    public function setEnvironment(?string $environment): static
     {
         $this->environment = $environment;
         return $this;
