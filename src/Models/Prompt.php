@@ -23,7 +23,7 @@ final class Prompt
         public array $prompt,
         /** @var positive-int */
         public int $version,
-        /** @var array<string> */
+        /** @var array<string, mixed> */
         public array $config,
         /** @var list<string> */
         public array $labels,
