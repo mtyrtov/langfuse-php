@@ -32,9 +32,38 @@ final class LangfuseClient
     /**
      * @throws LangfuseException
      */
+    private function fetch(string $method, string $uri, array $query = [], array $payload = []): array
+    {
+        try {
+            $response = $this->httpClient->request($method, $uri, [
+                'query' => $query,
+                'json' => $payload,
+            ]);
+
+            return \json_decode($response->getBody()->getContents(), true);
+        } catch (RequestException $exception) {
+            throw new LangfuseException(
+                message: $exception->getResponse()->getBody()->getContents(),
+                code: $exception->getCode(),
+                previous: $exception
+            );
+        }
+    }
+
+    /**
+     * @throws LangfuseException
+     */
     public function health(): array
     {
         return $this->fetch(method: 'GET', uri: '/api/public/health');
+    }
+
+    /**
+     * @throws LangfuseException
+     */
+    public function score(array $data): array
+    {
+        return $this->fetch(method: 'POST', uri: '/api/public/scores', payload: $data);
     }
 
     /**
@@ -116,26 +145,5 @@ final class LangfuseClient
                 "status" => "PENDING",
             ],
         );
-    }
-
-    /**
-     * @throws LangfuseException
-     */
-    private function fetch(string $method, string $uri, array $query = [], array $payload = []): array
-    {
-        try {
-            $response = $this->httpClient->request($method, $uri, [
-                'query' => $query,
-                'json' => $payload,
-            ]);
-
-            return \json_decode($response->getBody()->getContents(), true);
-        } catch (RequestException $exception) {
-            throw new LangfuseException(
-                message: $exception->getResponse()->getBody()->getContents(),
-                code: $exception->getCode(),
-                previous: $exception
-            );
-        }
     }
 }
