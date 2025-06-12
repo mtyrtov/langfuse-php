@@ -61,6 +61,31 @@ final class LangfuseClient
     /**
      * @throws LangfuseException
      */
+    public function createAnnotationQueueItem(
+        string $queueId,
+        string $objectId,
+        string $objectType,
+        ?string $status = null
+    ): array {
+        $payload = [
+            'objectId' => $objectId,
+            'objectType' => $objectType,
+        ];
+
+        if ($status !== null) {
+            $payload['status'] = $status;
+        }
+
+        return $this->fetch(
+            method: 'POST',
+            uri: "/api/public/annotation-queues/$queueId/items",
+            payload: $payload,
+        );
+    }
+
+    /**
+     * @throws LangfuseException
+     */
     public function score(array $data): array
     {
         return $this->fetch(method: 'POST', uri: '/api/public/scores', payload: $data);
@@ -125,25 +150,6 @@ final class LangfuseClient
             method: 'POST',
             uri: '/api/public/v2/prompts',
             payload: $prompt,
-        );
-    }
-
-    /**
-     * @throws LangfuseException
-     */
-    public function createAnnotationQueueItem(
-        string $queueId,
-        string $objectId,
-        string $objectType
-    ): array {
-        return $this->fetch(
-            method: 'POST',
-            uri: "/api/public/annotation-queues/$queueId/items",
-            payload: [
-                "objectId" => $objectId,
-                "objectType" => $objectType,
-                "status" => "PENDING",
-            ],
         );
     }
 }
