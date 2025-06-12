@@ -9,7 +9,7 @@ A PHP SDK for interacting with the Langfuse API. This package provides tools for
 ## Installation
 
 ```bash
-composer require mtyrtov/langfuse-php
+composer require mtyrtov/langfuse-php:dev-master
 ```
 
 ## Quick Start
