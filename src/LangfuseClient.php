@@ -61,6 +61,14 @@ final class LangfuseClient
     /**
      * @throws LangfuseException
      */
+    public function traces(array $query = []): array
+    {
+        return $this->fetch('GET', '/api/public/traces', $query);
+    }
+
+    /**
+     * @throws LangfuseException
+     */
     public function createAnnotationQueueItem(
         string $queueId,
         string $objectId,
