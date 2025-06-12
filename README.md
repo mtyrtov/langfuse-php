@@ -1,5 +1,10 @@
 # Langfuse PHP SDK
 
+[![Latest Version on Packagist](https://img.shields.io/packagist/v/mtyrtov/langfuse-php.svg?style=flat-square)](https://packagist.org/packages/mtyrtov/langfuse-php)
+[![Total Downloads](https://img.shields.io/packagist/dt/mtyrtov/langfuse-php.svg?style=flat-square)](https://packagist.org/packages/mtyrtov/langfuse-php)
+[![PHP Version Require](https://img.shields.io/packagist/php-v/mtyrtov/langfuse-php?style=flat-square)](https://packagist.org/packages/mtyrtov/langfuse-php)
+[![License](https://img.shields.io/packagist/l/mtyrtov/langfuse-php.svg?style=flat-square)](https://packagist.org/packages/mtyrtov/langfuse-php)
+
 A PHP SDK for interacting with the Langfuse API. This package provides tools for tracing, spans, generations, events and prompt management to enable comprehensive LLM observability.
 
 ## Requirements
