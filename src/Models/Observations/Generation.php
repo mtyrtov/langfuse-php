@@ -8,6 +8,7 @@ use Carbon\Carbon;
 use Langfuse\Enum\EventTypeEnum;
 use Langfuse\Models\Prompt;
 
+# TODO: wrapper
 final class Generation extends AbstractObservation
 {
     public EventTypeEnum $type = EventTypeEnum::GENERATION;

@@ -2,8 +2,10 @@
 
 declare(strict_types=1);
 
-namespace Langfuse;
+namespace Langfuse\Managers;
 
+use Langfuse\Exceptions;
+use Langfuse\LangfuseClient;
 use Langfuse\Models\Prompt;
 
 final class PromptManager

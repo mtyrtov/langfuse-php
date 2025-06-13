@@ -2,9 +2,10 @@
 
 declare(strict_types=1);
 
-namespace Langfuse;
+namespace Langfuse\Managers;
 
 use Langfuse\Exceptions\LangfuseException;
+use Langfuse\LangfuseClient;
 
 final class TraceManager
 {
@@ -23,6 +24,6 @@ final class TraceManager
             'limit' => 1,
         ]);
 
-        return $response['data'][0]['id'] ?? null;
+        return $response['data'][0]['id'] ?? null; # TODO: ошибка
     }
 }
