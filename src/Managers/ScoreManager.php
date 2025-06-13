@@ -2,7 +2,9 @@
 
 declare(strict_types=1);
 
-namespace Langfuse;
+namespace Langfuse\Managers;
+
+use Langfuse\LangfuseClient;
 
 final class ScoreManager
 {

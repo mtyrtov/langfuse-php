@@ -9,6 +9,7 @@ use Langfuse\LangfuseProfiler;
 use Langfuse\Models\AbstractEntity;
 use Langfuse\Models\Trace;
 
+# TODO: CarbonImmutable + new CarbonImmutable('now', $this->timezone)
 # TODO: какая-то фигня с профайлером тут происходит
 abstract class AbstractObservation extends AbstractEntity
 {
@@ -43,6 +44,7 @@ abstract class AbstractObservation extends AbstractEntity
 
     public function getStartTime(): ?string
     {
+        # TODO: вынести формат (но это требование LF для формата времени)
         return $this->startTime?->format('Y-m-d\TH:i:s.u\Z');
     }
 

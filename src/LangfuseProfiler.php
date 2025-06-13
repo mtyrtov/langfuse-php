@@ -30,6 +30,7 @@ final class LangfuseProfiler
         return $this->objects;
     }
 
+    # TODO: get/find + string name
     public function getTrace(): ?Trace
     {
         if (empty($this->trace)) {
@@ -42,9 +43,9 @@ final class LangfuseProfiler
     public function trace(string $name): Trace
     {
         $id = Uuid::uuid4()->toString();
-        $this->trace = new Trace($id, $name, $this);
+        $this->trace = new Trace($id, $name, $this); # TODO: object id
 
-        $this->register($this->trace); # TODO: reset() ?
+        $this->register($this->trace);
 
         return $this->trace;
     }
@@ -86,6 +87,7 @@ final class LangfuseProfiler
      * Normalizes the start times of observations to ensure proper ordering
      * by adding milliseconds to observations with identical timestamps.
      */
+    # TODO: костыль. удалить или переписать
     private function normalizeObservationTimes(): void
     {
         $observations = [];

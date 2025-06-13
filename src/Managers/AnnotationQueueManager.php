@@ -2,11 +2,12 @@
 
 declare(strict_types=1);
 
-namespace Langfuse;
+namespace Langfuse\Managers;
 
 use Langfuse\Enum\AnnotationObjectTypeEnum;
 use Langfuse\Enum\AnnotationQueueStatusEnum;
 use Langfuse\Exceptions\LangfuseException;
+use Langfuse\LangfuseClient;
 
 final class AnnotationQueueManager
 {

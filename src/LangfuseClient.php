@@ -9,10 +9,13 @@ use GuzzleHttp\Exception\RequestException;
 use Langfuse\Exceptions\LangfuseException;
 use Langfuse\Models\Prompt;
 
+# TODO: DTO для методов класса клиента
+# TODO: куда-то вынести API пути для гибкости
 final class LangfuseClient
 {
     private HttpClient $httpClient;
 
+    # TODO: создать singletone и клиент юзать (передать клиент)
     public function __construct(
         string $publicKey,
         string $secretKey,

@@ -3,6 +3,19 @@
   "description": "Langfuse SDK",
   "type": "library",
   "license": "MIT",
+  "keywords": [
+    "langfuse",
+    "llm",
+    "observability",
+    "monitoring",
+    "tracing",
+    "sdk",
+    "ai"
+  ],
+  "support": {
+    "issues": "https://github.com/mtyrtov/langfuse-php/issues",
+    "source": "https://github.com/mtyrtov/langfuse-php"
+  },
   "require": {
     "php": ">=8.1",
     "ext-json": "*",
