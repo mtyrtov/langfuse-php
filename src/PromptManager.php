@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Langfuse;
 
+use Langfuse\Exceptions\LangfuseException;
 use Langfuse\Models\Prompt;
 
 final class PromptManager
@@ -18,5 +19,13 @@ final class PromptManager
     public function getPrompt(string $promptName): Prompt
     {
         return $this->client->prompt($promptName);
+    }
+
+    /**
+     * @throws LangfuseException
+     */
+    public function getCompiledPrompt(string $promptName, array $variables = []): array
+    {
+        return $this->getPrompt($promptName)->compile($variables);
     }
 }
