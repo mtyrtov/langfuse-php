@@ -27,7 +27,7 @@ final class ModelConfig
     {
         return [
             'model' => $this->model,
-            'provider' => $this->provider,
+            # 'provider' => $this->provider,
             'temperature' => $this->temperature,
             'top_p' => $this->top_p,
         ];
