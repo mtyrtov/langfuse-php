@@ -14,9 +14,9 @@ final class PromptManager
     ) {}
 
     /**
-     * @throws Exceptions\LangfuseException
+     * @throws LangfuseException
      */
-    public function getPrompt(string $promptName): Prompt
+    public function fetchPrompt(string $promptName): Prompt
     {
         return $this->client->prompt($promptName);
     }
@@ -26,6 +26,6 @@ final class PromptManager
      */
     public function getCompiledPrompt(string $promptName, array $variables = []): array
     {
-        return $this->getPrompt($promptName)->compile($variables);
+        return $this->fetchPrompt($promptName)->compile($variables);
     }
 }
